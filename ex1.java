@@ -40,3 +40,11 @@ public class CodeMetricsCalculator {
                     }
                     continue;
                 }
+                  } catch (IOException exception) {
+            System.err.println("Error reading the file: " + exception.getMessage());
+            System.exit(1);
+        }
+
+        return locCount;
+    }
+}
