@@ -19,3 +19,10 @@ public class CodeMetricsCalculator {
             boolean insideCommentBlock = false;
   while ((line = bufferedReader.readLine()) != null) {
                 line = line.trim();
+                 if (line.isEmpty() || line.startsWith("//")) {
+                    continue;
+                }
+                
+                 if (line.isEmpty() || line.startsWith("//")) {
+                    continue;
+                }
