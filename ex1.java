@@ -26,3 +26,17 @@ public class CodeMetricsCalculator {
                  if (line.isEmpty() || line.startsWith("//")) {
                     continue;
                 }
+               if (line.startsWith("/*")) {
+                    insideCommentBlock = true;
+                    if (line.endsWith("*/")) {
+                        insideCommentBlock = false;
+                    }
+                    continue;
+                }  
+                 if (line.startsWith("/*")) {
+                    insideCommentBlock = true;
+                    if (line.endsWith("*/")) {
+                        insideCommentBlock = false;
+                    }
+                    continue;
+                }
