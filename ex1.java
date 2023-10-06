@@ -1,3 +1,21 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+public class CodeMetricsCalculator {
+
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.err.println("Usage: java CodeMetricsCalculator <source_file>");
+            System.exit(1);
+        }
+            String sourceFileName = args[0];
+        int totalLinesOfCode = calculateCodeMetrics(sourceFileName);
+        System.out.println("Total Lines of Code: " + totalLinesOfCode);
+    }
+ private static int calculateCodeMetrics(String sourceFileName) {
+        int locCount = 0;
+ try (BufferedReader bufferedReader = new BufferedReader(new FileReader(sourceFileName))) {
+            String line;
+            boolean insideCommentBlock = false;
+  while ((line = bufferedReader.readLine()) != null) {
+                line = line.trim();
